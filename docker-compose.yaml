@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: 'postgres:latest'
+    ports:
+      - '5432:5432'
+    restart: always
+    volumes:
+      - prisma-post-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=prisma
+      - POSTGRES_USER=prisma
+      - POSTGRES_DB=gql-apollo-prisma
+volumes:
+  prisma-post-db: {}
